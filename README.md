@@ -1,6 +1,6 @@
 # Link Shortener
 
-Сервис сокращения ссылок на FastAPI + PostgreSQL + Docker.
+Сервис сокращения ссылок на FastAPI + PostgreSQL.
 
 ## Стек
 
