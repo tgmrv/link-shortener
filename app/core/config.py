@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -7,7 +8,7 @@ class Settings:
 
 def get_settings() -> Settings:
     return Settings(
-    DATABASE_URL = "postgresql+asyncpg://postgres:admin@localhost:5432/postgres",
+    DATABASE_URL = os.getenv("DATABASE_URL", default="postgresql+asyncpg://postgres:admin@localhost:5432/postgres"),
     BASE_URL = "http://localhost:8000"
     )
 

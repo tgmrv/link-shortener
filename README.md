@@ -21,5 +21,21 @@ GET /{short_code} — редирект
 ## Запуск
 
 ```bash
-docker-compose up -d
-uvicorn app.main:app --reload
+# Скопировать репозиторий
+git clone https://github.com/tgmrv/link-shortener.git
+cd link-shortener
+
+# Создать образы и запустить контейнеры сервис
+docker-compose up -d --build
+
+# Остановить сервис
+docker-compose down
+
+# Остановить сервис и удалить все данные
+docker-compose down -v
+
+# Удалить образ
+docker rmi <имя_или_id>
+
+# Узнать имена образов
+docker images
