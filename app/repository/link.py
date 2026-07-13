@@ -1,6 +1,6 @@
 from pydantic import HttpUrl
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, delete
 
 from app.models.link import LinkORM
 
@@ -33,3 +33,10 @@ class LinkRepository:
         link = LinkORM(original_url=str(original_url), short_code=short_code)
         self.db.add(link)
         return link
+
+    async def delete_by_short_code(self, short_code: str) -> bool:
+        link = await self.get_by_short_code(short_code)
+        if not link:
+            return False
+        await self.db.delete(link)
+        return True

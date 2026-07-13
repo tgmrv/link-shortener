@@ -25,7 +25,7 @@ GET /{short_code} — редирект
 git clone https://github.com/tgmrv/link-shortener.git
 cd link-shortener
 
-# Создать образы и запустить контейнеры сервис
+# Создать образы и запустить контейнеры и сервис
 docker-compose up -d --build
 
 # Остановить сервис

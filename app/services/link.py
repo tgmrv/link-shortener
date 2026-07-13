@@ -51,4 +51,8 @@ class LinkService:
             short_url=f"{settings.BASE_URL}/{link.short_code}"
             )
 
-
+    async def delete_link(self, short_code: str) -> bool:
+        deleted = await self.link_repo.delete_by_short_code(short_code)
+        if deleted:
+            await self.db.commit()
+        return deleted

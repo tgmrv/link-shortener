@@ -22,3 +22,10 @@ async def redirect_to_original(short_code: str, link_service: LinkService = Depe
     if not link:
         raise HTTPException(status_code=404, detail="Link not found")
     return RedirectResponse(url=link.original_url)
+
+@router.delete("/{short_code}")
+async def delete_link(short_code: str, link_service: LinkService = Depends(get_link_service)):
+    link = await link_service.delete_link(short_code)
+    if not link:
+        raise HTTPException(status_code=404, detail="Link not found")
+    return {"message": f"Link with short_code '{short_code}' deleted"}
