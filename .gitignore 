@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Виртуальное окружение
+.venv/
+venv/
+env/
+ENV/
+
+# Файлы с секретами
+.env
+.env.local
+*.secret
+
+# Логи и базы данных
+*.log
+*.sqlite3
+*.db
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+.DS_Store
+
+# Тесты
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.dockerignore
