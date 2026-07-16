@@ -1,6 +1,5 @@
 import pytest
 from app.services.link import LinkService
-from app.schemas.link import LinkCreateSchema
 
 @pytest.mark.asyncio
 async def test_generate_unique_short_code(test_db):
